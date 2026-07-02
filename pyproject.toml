@@ -1,15 +1,16 @@
-[tool.poetry]
+[project]
 name = "homr"
 version = "0.1.0"
 description = "End-to-end Optical Music Recognition (OMR) system build on top of vision transformers."
-authors = ["Christian Liebhardt <christian.liebhardt@arcor.de>"]
+authors = [{name = "Christian Liebhardt", email = "christian.liebhardt@arcor.de"}]
 license = "AGPL-3.0"
 readme = "README.md"
 homepage = "https://github.com/liebharc/homr"
 documentation = "https://github.com/liebharc/homr"
+requires-python = "<3.16,>=3.11"
+dynamic = ["dependencies"]
 
 [tool.poetry.dependencies]
-python = "<3.16,>=3.11"
 numpy = "^2.4.2"
 opencv-python-headless = "^4.13.0.92"
 Pillow = "^12.1.1"
@@ -154,5 +155,5 @@ log_cli = true
 log_cli_level = 10
 testpaths = ["tests"]
 
-[tool.poetry.scripts]
+[project.scripts]
 homr = "homr.main:main"
