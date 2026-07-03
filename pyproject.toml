@@ -31,6 +31,12 @@ exclude-dependencies = ["opencv-python"]
 gpu = [
   "onnxruntime-gpu >= 1.24.1, < 2",
 ]
+# This installs the wheel-packaged versions of the CUDA and cuDNN
+# runtime libraries, so you don't need them globally installed.
+cuda = [
+  "homr[gpu]",
+  "onnxruntime-gpu[cuda,cudnn] >= 1.24.1, < 2",
+]
 
 [dependency-groups]
 dev = [
